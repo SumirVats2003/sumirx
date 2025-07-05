@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Special+Gothic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap");
+
+:root {
+  --serif-font: "Special Gothic", sans-serif;
+  --monospace-font: "Cascadia Code", sans-serif;
+  --accent: #4cc9f0;
+  --light: #f1edee;
+  --secondary: #203a4e;
+  --surface: #142533;
+  --background: #0d1821;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--serif-font);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--light);
+}
+
+a {
+  color: var(--light);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+  transition: 0.2s ease;
+  text-decoration: underline;
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+nav {
+  width: 50vw;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.gloss {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+nav img {
+  width: 3rem;
+  height: 3rem;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+nav ul li {
+  margin: 0.5rem;
+}
