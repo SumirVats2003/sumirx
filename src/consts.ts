@@ -1,11 +1,11 @@
 import type { IconMap, SocialLink, Site } from '@/types'
 
 export const SITE: Site = {
-  title: 'astro-erudite',
+  title: 'sumirx',
   description:
-    'astro-erudite is a opinionated, unstyled blogging template—built with Astro, Tailwind, and shadcn/ui.',
+    'Welcome to Sumir Vats\' blog',
   href: 'https://astro-erudite.vercel.app',
-  author: 'jktrn',
+  author: 'SumirVats2003',
   locale: 'en-US',
   featuredPostCount: 2,
   postsPerPage: 3,
@@ -17,10 +17,6 @@ export const NAV_LINKS: SocialLink[] = [
     label: 'blog',
   },
   {
-    href: '/authors',
-    label: 'authors',
-  },
-  {
     href: '/about',
     label: 'about',
   },
@@ -28,20 +24,20 @@ export const NAV_LINKS: SocialLink[] = [
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
-    href: 'https://github.com/jktrn',
+    href: 'https://www.linkedin.com/in/sumirvats',
+    label: 'LinkedIn',
+  },
+  {
+    href: 'https://github.com/SumirVats',
     label: 'GitHub',
   },
   {
-    href: 'https://twitter.com/enscry',
+    href: 'https://twitter.com/SumirVats',
     label: 'Twitter',
   },
   {
-    href: 'mailto:jason@enscribe.dev',
+    href: 'mailto:sumirvats@gmail.com',
     label: 'Email',
-  },
-  {
-    href: '/rss.xml',
-    label: 'RSS',
   },
 ]
 
