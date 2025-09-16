@@ -21,6 +21,15 @@ export async function getAllPostsAndSubposts(): Promise<
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
 }
 
+export async function getAllExperiences(): Promise<CollectionEntry<'experiences'>[]> {
+  const experiences = await getCollection('experiences')
+  return experiences.sort((a, b) => {
+    const dateA = a.data.startDate?.getTime() || 0
+    const dateB = b.data.startDate?.getTime() || 0
+    return dateB - dateA
+  })
+}
+
 export async function getAllProjects(): Promise<CollectionEntry<'projects'>[]> {
   const projects = await getCollection('projects')
   return projects.sort((a, b) => {
@@ -163,7 +172,7 @@ export function groupPostsByYear(
   return posts.reduce(
     (acc: Record<string, CollectionEntry<'blog'>[]>, post) => {
       const year = post.data.date.getFullYear().toString()
-      ;(acc[year] ??= []).push(post)
+        ; (acc[year] ??= []).push(post)
       return acc
     },
     {},
