@@ -10,14 +10,14 @@ const experiences = await getAllExperiences()
 const projects = await getAllProjects()
 ---
 
-<Layout class='max-w-3xl'>
-  <PageHead slot='head' title='About' />
+<Layout class="max-w-3xl">
+  <PageHead slot="head" title="About" />
   <Breadcrumbs items={[{ label: 'About', icon: 'lucide:info' }]} />
 
   <section>
-    <div class='min-w-full'>
-      <div class='prose mb-8'>
-        <p class='mt-0 text-justify'>
+    <div class="min-w-full">
+      <div class="prose mb-8">
+        <p class="mt-0 text-justify">
           👋 Hi, I'm Sumir Vats : a Software Engineer with a year of experience
           building scalable backend systems and seamless web applications. My
           expertise lies in Nodejs, TypeScript, MongoDB, with strong proficiency
@@ -36,13 +36,13 @@ const projects = await getAllProjects()
           >.
         </p> -->
       </div>
-      <h2 class='mb-4 text-2xl font-medium'>Experience</h2>
-      <div class='mb-8 flex flex-col gap-4'>
+      <h2 class="mb-4 text-2xl font-medium">Experience</h2>
+      <div class="mb-8 flex flex-col gap-4">
         {experiences.map((exp) => <ExpCard experience={exp} />)}
       </div>
 
-      <h2 class='mb-4 text-2xl font-medium'>Projects</h2>
-      <div class='flex flex-col gap-4'>
+      <h2 class="mb-4 text-2xl font-medium">Projects</h2>
+      <div class="flex flex-col gap-4">
         {projects.map((project) => <ProjectCard project={project} />)}
       </div>
     </div>

@@ -2,8 +2,7 @@ import type { IconMap, SocialLink, Site } from '@/types'
 
 export const SITE: Site = {
   title: 'sumirx',
-  description:
-    'Welcome to Sumir Vats\' blog',
+  description: "Welcome to Sumir Vats' blog",
   href: 'https://sumirvats.netlify.app',
   author: 'SumirVats2003',
   locale: 'en-US',
