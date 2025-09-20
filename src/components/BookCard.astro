@@ -1,0 +1,60 @@
+---
+import { Badge } from '@/components/ui/badge'
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+import type { CollectionEntry } from 'astro:content'
+import Link from './Link.astro'
+
+interface Props {
+  entry: CollectionEntry<'books'>
+}
+
+const { entry } = Astro.props
+---
+
+<div
+  class='hover:bg-secondary/50 rounded-xl border p-4 transition-colors duration-300 ease-in-out'
+>
+  <Link
+    href={`${entry.data.link}`}
+    class='flex flex-col gap-4 sm:flex-row'
+    external
+  >
+    {
+      entry.data.image && (
+        <div class='w-full sm:max-w-3xs sm:shrink-0'>
+          <Image
+            src={entry.data.image}
+            alt={entry.data.name}
+            width={1200}
+            height={630}
+            class='object-cover'
+          />
+        </div>
+      )
+    }
+
+    <div class='grow'>
+      <h3 class='mb-1 text-lg font-medium'>{entry.data.name}</h3>
+      <p class='text-muted-foreground mb-2 text-sm'>{entry.data.description}</p>
+      <div class='mb-2'>
+        <Badge variant='default' className='flex items-center gap-x-1'>
+          <Icon name='lucide:user-pen' class='size-3' />
+          {entry.data.author}
+        </Badge>
+      </div>
+      {
+        entry.data.tags && (
+          <div class='flex flex-wrap gap-2'>
+            {entry.data.tags.map((tag) => (
+              <Badge variant='secondary' className='flex items-center gap-x-1'>
+                <Icon name='lucide:hash' class='size-3' />
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </Link>
+</div>

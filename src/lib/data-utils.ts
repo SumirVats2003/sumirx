@@ -37,6 +37,10 @@ export async function getAllProjects(): Promise<CollectionEntry<'projects'>[]> {
   })
 }
 
+export async function getAllBooks(): Promise<CollectionEntry<'books'>[]> {
+  return await getCollection('books')
+}
+
 export async function getAllTags(): Promise<Map<string, number>> {
   const posts = await getAllPosts()
   return posts.reduce((acc, post) => {
@@ -170,7 +174,7 @@ export function groupPostsByYear(
   return posts.reduce(
     (acc: Record<string, CollectionEntry<'blog'>[]>, post) => {
       const year = post.data.date.getFullYear().toString()
-      ;(acc[year] ??= []).push(post)
+        ; (acc[year] ??= []).push(post)
       return acc
     },
     {},

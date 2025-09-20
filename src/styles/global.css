@@ -93,3 +93,7 @@
     @apply border-border outline-ring/50 tracking-tight;
   }
 }
+
+.italic {
+  font-style: italic;
+}

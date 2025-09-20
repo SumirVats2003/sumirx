@@ -1,0 +1,48 @@
+---
+import BookCard from '@/components/BookCard.astro'
+import PageHead from '@/components/PageHead.astro'
+import Layout from '@/layouts/Layout.astro'
+import { getAllBooks } from '@/lib/data-utils'
+
+const books = await getAllBooks()
+---
+
+<Layout class='max-w-3xl'>
+  <PageHead slot='head' title='Home' />
+  <section>
+    <div class='rounded-lg border'>
+      <div class='flex flex-col space-y-1.5 p-6'>
+        <h3 class='text-3xl leading-none font-medium'>Books</h3>
+        <p class='text-muted-foreground text-sm italic'>
+          Refuge from almost all miseries in life
+        </p>
+      </div>
+      <div class='p-6 pt-0'>
+        <p class='text-muted-foreground mb-2 text-sm'>
+          I am an active reader of literature from the Software Engineering
+          Community. I feel reading books on topics we inculcate in day-to-day
+          activities is a great way of keeping our skills sharp, along with
+          being keeping ourselfs informed about the core principles of our
+          profession.
+        </p>
+        <p class='text-muted-foreground text-sm'>
+          I have been enjoying this habit and it is reflected on the way I have
+          written code lately, along with behavioural changes towards
+          professionalism for the better.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class='flex flex-col gap-y-4'>
+    <h2 class='text-2xl font-medium'>My Book Collection</h2>
+    <ul class='flex flex-col gap-y-4'>
+      {
+        books.map((book) => (
+          <li>
+            <BookCard entry={book} />
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>
