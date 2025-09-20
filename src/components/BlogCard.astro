@@ -24,55 +24,49 @@ const subpostCount = !isSubpost(entry.id) ? await getSubpostCount(entry.id) : 0
 ---
 
 <div
-  class="hover:bg-secondary/50 rounded-xl border p-4 transition-colors duration-300 ease-in-out"
+  class='hover:bg-secondary/50 rounded-xl border p-4 transition-colors duration-300 ease-in-out'
 >
   <Link
     href={`/${entry.collection}/${entry.id}`}
-    class="flex flex-col gap-4 sm:flex-row"
+    class='flex flex-col gap-4 sm:flex-row'
   >
     {
       entry.data.image && (
-        <div class="w-full sm:max-w-3xs sm:shrink-0">
+        <div class='w-full sm:max-w-3xs sm:shrink-0'>
           <Image
             src={entry.data.image}
             alt={entry.data.title}
             width={1200}
             height={630}
-            class="object-cover"
+            class='object-cover'
           />
         </div>
       )
     }
 
-    <div class="grow">
-      <h3 class="mb-1 text-lg font-medium">{entry.data.title}</h3>
-      <p class="text-muted-foreground mb-2 text-sm">{entry.data.description}</p>
+    <div class='grow'>
+      <h3 class='mb-1 text-lg font-medium'>{entry.data.title}</h3>
+      <p class='text-muted-foreground mb-2 text-sm'>{entry.data.description}</p>
 
       <div
-        class="text-muted-foreground mb-2 flex flex-wrap items-center gap-x-2 text-xs"
+        class='text-muted-foreground mb-2 flex flex-wrap items-center gap-x-2 text-xs'
       >
         <>
-          <div class="flex items-center gap-x-1.5">
-            <AvatarComponent
-              client:load
-              src="sumir.png"
-              alt="Sumir Vats"
-              fallback="SumirVats"
-              className="size-5 rounded-full"
-            />
+          <div class='flex items-center gap-x-1.5'>
+            <AvatarComponent client:load className='size-5 rounded-full' />
             <span>Sumir Vats</span>
           </div>
-          <Separator orientation="vertical" className="h-4!" />
+          <Separator orientation='vertical' className='h-4!' />
         </>
         <span>{formattedDate}</span>
-        <Separator orientation="vertical" className="h-4!" />
+        <Separator orientation='vertical' className='h-4!' />
         <span>{readTime}</span>
         {
           subpostCount > 0 && (
             <>
-              <Separator orientation="vertical" className="h-4!" />
-              <span class="flex items-center gap-1">
-                <Icon name="lucide:file-text" class="size-3" />
+              <Separator orientation='vertical' className='h-4!' />
+              <span class='flex items-center gap-1'>
+                <Icon name='lucide:file-text' class='size-3' />
                 {subpostCount} subpost{subpostCount === 1 ? '' : 's'}
               </span>
             </>
@@ -82,10 +76,10 @@ const subpostCount = !isSubpost(entry.id) ? await getSubpostCount(entry.id) : 0
 
       {
         entry.data.tags && (
-          <div class="flex flex-wrap gap-2">
+          <div class='flex flex-wrap gap-2'>
             {entry.data.tags.map((tag) => (
-              <Badge variant="secondary" className="flex items-center gap-x-1">
-                <Icon name="lucide:hash" class="size-3" />
+              <Badge variant='secondary' className='flex items-center gap-x-1'>
+                <Icon name='lucide:hash' class='size-3' />
                 {tag}
               </Badge>
             ))}
